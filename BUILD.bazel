@@ -1,0 +1,17 @@
+load("@io_bazel_rules_kotlin//kotlin:jvm.bzl", "kt_jvm_binary")
+load("@rules_jvm_external//:defs.bzl", "artifact")
+
+kt_jvm_binary(
+    name = "server",
+    srcs = ["Server.kt"],
+    main_class = "com.example.ServerKt",
+    deps = [
+        artifact("io.ktor:ktor-server-netty-jvm"),
+        artifact("io.ktor:ktor-server-core-jvm"),
+        artifact("io.ktor:ktor-server-host-common-jvm"),
+        artifact("io.ktor:ktor-http-jvm"),
+        artifact("org.jetbrains.kotlinx:kotlinx-coroutines-core-jvm"),
+        artifact("org.slf4j:slf4j-api"),
+        artifact("org.slf4j:slf4j-simple"),
+    ],
+)
