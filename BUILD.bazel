@@ -6,9 +6,6 @@ kt_jvm_binary(
     srcs = ["ServerInline.kt"],
     main_class = "com.example.ServerInlineKt",
     deps = [
-        artifact("io.ktor:ktor-server-netty-jvm"),
-        artifact("io.ktor:ktor-server-core-jvm"),
         artifact("io.ktor:ktor-server-host-common-jvm"),
-        artifact("io.ktor:ktor-http-jvm"),
     ],
 )
