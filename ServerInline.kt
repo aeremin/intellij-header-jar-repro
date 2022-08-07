@@ -9,15 +9,17 @@ import io.ktor.server.response.*
 import io.ktor.server.routing.*
 
 fun main() {
-    embeddedServer(Netty, port = 8081, host = "0.0.0.0") {
-
-        this.log.info("Hello world!")
-        this.routing {
-            get("/") {
-                call.respondText("Hello Cloud World!")
-            }
+    val environment = applicationEngineEnvironment {
+        module {
+            main()
         }
-    }.start(wait = true)
+
+        connector {
+            port = 8080
+            host = "127.0.0.1"
+        }
+    }
+    Application(environment)
 }
 
-fun foo(app: Application) {}
+

@@ -4,7 +4,7 @@ load("@rules_jvm_external//:defs.bzl", "artifact")
 kt_jvm_binary(
     name = "server_inline",
     srcs = ["ServerInline.kt"],
-    main_class = "com.example.ServerKt",
+    main_class = "com.example.ServerInlineKt",
     deps = [
         artifact("io.ktor:ktor-server-netty-jvm"),
         artifact("io.ktor:ktor-server-core-jvm"),
